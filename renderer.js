@@ -1,6 +1,4 @@
-const path = require('path');
- 
-function clicked() {
+ function clicked() {
   const listElement = document.getElementById('list');
 
   const children = listElement.children;
@@ -15,5 +13,3 @@ function clicked() {
 
   listElement.append(newItem);
 }
-
-console.log(path.join(__dirname, 'preload.js'));
