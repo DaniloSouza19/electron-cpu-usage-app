@@ -1,6 +1,6 @@
 ## APP TO DISPLAY CPU USAGE
 
-<img src="" alt="image app" ><img>
+<img src="https://github.com/DaniloSouza19/electron-cpu-usage-app/blob/master/.github/print.png" alt="image app" ><img>
 
 ## TECHS
 
