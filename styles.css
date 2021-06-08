@@ -5,9 +5,12 @@ html, body {
 
 #container {
   margin: 0 auto;
-  max-width: 50%;
+  max-width: 90%;
+  height: 100vh;
   
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
