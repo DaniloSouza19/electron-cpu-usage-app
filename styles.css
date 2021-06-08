@@ -1,6 +1,16 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: Roboto sans-serif;
+}
+
+h1, h2, span {
+  font-family: Roboto sans-serif;
+  color: #BFBFBF;
+}
+
+h1 {
+  color: #FF5555;
 }
 
 #container {
@@ -11,8 +21,4 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-h1 {
-  color: red;
 }
