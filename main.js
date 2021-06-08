@@ -4,8 +4,8 @@ const si = require('systeminformation');
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 400,
-    height: 400,
+    width: 250,
+    height: 250,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       devTools: true,
@@ -13,7 +13,9 @@ function createWindow () {
     },
     autoHideMenuBar: true,
     title: 'CPU Usage',
-    maximizable: false
+    alwaysOnTop: true,
+    maximizable: false,
+    resizable: false
   });
 
   win.loadFile('index.html');
