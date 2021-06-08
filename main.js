@@ -1,23 +1,22 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const si = require('systeminformation');
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 800,
+    width: 400,
+    height: 400,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       devTools: true,
       nodeIntegration: true
     },
-    icon: path.join(__dirname, 'assets', 'icon.png')
+    autoHideMenuBar: true,
+    title: 'CPU Usage',
+    maximizable: false
   });
 
   win.loadFile('index.html');
-
-  const contents = win.webContents;
-
-  console.log(contents);
 };
 
 app.whenReady().then(() => {
@@ -34,4 +33,10 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+})
+
+ipcMain.handle('get-cpu-used', async (event, args) => {
+  let usage = await si.currentLoad();
+
+  return usage;
 })

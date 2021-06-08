@@ -1,13 +1,7 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const replaceText = (selector, text) => {
-    const element = document.getElementById(selector);
-    
-    if (element) {
-      element.innerText = text;
-    }
-  }
+const { ipcRenderer, contextBridge, BrowserWindow } = require('electron');
+let os = require('os');
 
-  for (const dependency of ['chrome', 'node', 'electron']) {
-    replaceText(`${dependency}-version`, process.versions[dependency]);
-  }
+contextBridge.exposeInMainWorld('api', {
+  cpuCount: os.cpus().length,
+  getCpuUsage: (args) => ipcRenderer.invoke('get-cpu-used', args),
 });

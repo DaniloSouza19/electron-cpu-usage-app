@@ -1,15 +1,13 @@
- function clicked() {
-  const listElement = document.getElementById('list');
+function getCpuStats () {
+  // get the html element to display the cpu used
+  const cpuUsageElement = document.getElementById('cpu-usage');
 
-  const children = listElement.children;
-
-  const counter = children.length;
-
-  const newItem = document.createElement('li');
-
-  const textItem = document.createTextNode(`Item: ${counter+1}`)
-
-  newItem.appendChild(textItem);
-
-  listElement.append(newItem);
+  api.getCpuUsage().then(data => {
+    cpuUsageElement.innerText = Number(data.currentLoad).toFixed(2);
+  })
+  
+  const coreCountElement = document.getElementById('core-count');
+  coreCountElement.innerText = api.cpuCount;
 }
+
+setInterval(getCpuStats, 1500);
