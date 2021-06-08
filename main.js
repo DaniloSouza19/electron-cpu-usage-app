@@ -8,9 +8,9 @@ function createWindow () {
     height: 250,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      devTools: true,
-      nodeIntegration: true
     },
+    backgroundColor: '#191622',
+    icon: path.join(__dirname, 'assets', 'icon.png'),
     autoHideMenuBar: true,
     title: 'CPU Usage',
     alwaysOnTop: true,
