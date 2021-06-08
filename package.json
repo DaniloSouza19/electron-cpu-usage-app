@@ -1,7 +1,7 @@
 {
-  "name": "my-electron-app",
+  "name": "cpu-usage",
   "version": "1.0.0",
-  "description": "Hello world",
+  "description": "Display in realtime the usage of CPU",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -24,7 +24,9 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./assets/icon.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
