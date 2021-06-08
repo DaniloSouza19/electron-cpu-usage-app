@@ -10,7 +10,7 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js'),
     },
     backgroundColor: '#191622',
-    icon: path.join(__dirname, 'assets', 'icon.png'),
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
     autoHideMenuBar: true,
     title: 'CPU Usage',
     alwaysOnTop: true,
